@@ -17,7 +17,8 @@ namespace Marantonieto.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "Sales Web Mvc App";
+            ViewData["Student"] = "Marantonieto";
 
             return View();
         }
