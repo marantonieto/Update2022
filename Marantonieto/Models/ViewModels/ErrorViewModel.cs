@@ -1,6 +1,6 @@
 using System;
 
-namespace Marantonieto.Models
+namespace Marantonieto.Models.ViewModels
 {
     public class ErrorViewModel
     {

@@ -1,4 +1,4 @@
-﻿using Marantonieto.Models;
+﻿using Marantonieto.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
