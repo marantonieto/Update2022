@@ -3,14 +3,16 @@ using System;
 using Marantonieto.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Marantonieto.Migrations
 {
     [DbContext(typeof(MarantonietoContext))]
-    partial class MarantonietoContextModelSnapshot : ModelSnapshot
+    [Migration("20221019132713_OtherEntities")]
+    partial class OtherEntities
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
