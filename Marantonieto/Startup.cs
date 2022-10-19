@@ -37,7 +37,8 @@ namespace Marantonieto
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddDbContext<MarantonietoContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("MarantonietoContext")));
+                    options.UseMySql(Configuration.GetConnectionString("MarantonietoContext"), builder =>
+                        builder.MigrationsAssembly("Marantonieto")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
