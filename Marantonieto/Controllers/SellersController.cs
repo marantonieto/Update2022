@@ -5,16 +5,18 @@ using System.Linq;
 using System.Threading.Tasks;
 using Marantonieto.Services;
 using Marantonieto.Models;
+using Marantonieto.Models.ViewModels;
 
 namespace Marantonieto.Controllers
 {
     public class SellersController : Controller
     {
         private readonly SellerService _sellerService;
-
-        public SellersController(SellerService service)
+        private readonly DepartmentService _departmentService;
+        public SellersController(SellerService service, DepartmentService department)
         {
             _sellerService = service;
+            _departmentService = department;
         }
         public IActionResult Index()
         {
@@ -23,7 +25,9 @@ namespace Marantonieto.Controllers
         }
         public IActionResult Create()
         {
-            return View();
+            var departments = _departmentService.FindAll();
+            var viewModel = new SellerFormViewModel { Departments = departments };
+            return View(viewModel);
         }
 
         [HttpPost]
