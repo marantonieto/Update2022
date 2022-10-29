@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Marantonieto.Data;
 using Marantonieto.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Marantonieto.Services
 {
@@ -21,7 +22,7 @@ namespace Marantonieto.Services
         }
         public Seller FindById(int id)
         {
-            return _context.Seller.FirstOrDefault(s => s.Id == id);
+            return _context.Seller.Include(x => x.Department).FirstOrDefault(s => s.Id == id);
         }
         public void Insert(Seller obj)
         {
