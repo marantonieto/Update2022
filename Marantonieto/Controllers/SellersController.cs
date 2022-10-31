@@ -68,7 +68,7 @@ namespace Marantonieto.Controllers
             }
             catch(IntegrityException e)
             {
-                return RedirectToAction(nameof(Error), new { message = "Can't delete because she/he has sales " });
+                return RedirectToAction(nameof(Error), new { message = "Can't delete because she/he has sales" });
             }
         }
 
