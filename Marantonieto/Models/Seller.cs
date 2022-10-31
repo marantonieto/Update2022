@@ -9,9 +9,13 @@ namespace Marantonieto.Models
     public class Seller
     {
         public int Id { get; set; }
+
+        [Required(ErrorMessage = "{0} cannot be empty")]
+        [StringLength(60, MinimumLength = 3, ErrorMessage = "{0} should have between {2} and {1} characters")]
         public string Name { get; set; }
 
         [DataType(DataType.EmailAddress)]
+        [EmailAddress(ErrorMessage = "Enter a valid email")]
         public string Email { get; set; }
 
         [Display(Name = "Birth Date")]
@@ -21,6 +25,7 @@ namespace Marantonieto.Models
 
         [Display(Name = "Base Salary")]
         [DisplayFormat(DataFormatString = "{0:F2}")]
+        [Range(1200.00, 60000.00, ErrorMessage = "{0} should be between {1} and {2}")]
         public double BaseSalary { get; set; }
         public ICollection<SalesRecord> Sales { get; set; } = new List<SalesRecord>();
         public Department Department { get; set; }
