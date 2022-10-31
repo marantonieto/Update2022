@@ -66,7 +66,7 @@ namespace Marantonieto.Controllers
                 await _sellerService.RemoveAsync(id);
                 return RedirectToAction(nameof(Index));
             }
-            catch(IntegrityException e)
+            catch(IntegrityException)
             {
                 return RedirectToAction(nameof(Error), new { message = "Can't delete because she/he has sales" });
             }

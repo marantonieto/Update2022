@@ -22,7 +22,7 @@ namespace Marantonieto.Models
         {
             Sellers.Add(seller);
         }
-        public double TotalSalles(DateTime initial, DateTime final)
+        public double TotalSales(DateTime initial, DateTime final)
         {
             return Sellers.Sum(sr => sr.TotalSales(initial, final));
         }
